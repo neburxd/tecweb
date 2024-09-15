@@ -58,3 +58,36 @@ html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es">
 
         echo '<p> En el segundo bloque de asignaciones, cambiamos el valor de la variable  $a a "PHP Server, adicionalmente "$b" se le asignó el valor de "$c" <p>'
     ?>
+<h2>Ejercicio 3</h2>
+    <p>Muestra el contenido de cada variable inmediatamente después de cada asignación, verificar la evolución del tipo de estas variables</p>
+    <p>$a = “PHP5”;</p>
+    <p>$z[] = &$a;</p>
+    <p>$b = “5a version de PHP”;</p>
+    <p>$c = $b*10;</p>
+    <p>$a .= $b;</p>
+    <p>$b *= $c;</p>
+    <p>$z[0] = “MySQL”;</p>
+
+    <?php
+        unset($a, $b, $c);  
+        $a = "PHP5";
+        echo '$a: ', $a, '<br>';
+
+        $z[] = &$a;
+        print_r($z);
+
+        $b = "5a version de PHP";
+        echo '<br>$b: ', $b, '<br>';
+
+        @$c = $b * 10;
+        echo '$c: ', $c, '<br>';
+
+        $a .= $b;
+        echo '$a: ', $a, '<br>';
+
+        $b =  (int) $b * $c;
+        echo '$b: ', $b, '<br>';
+
+        $z[0] = "MySQL";
+        print_r($z);
+?>
