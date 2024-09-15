@@ -58,7 +58,98 @@ html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es">
 
         echo '<p> En el segundo bloque de asignaciones, cambiamos el valor de la variable  $a a "PHP Server, adicionalmente "$b" se le asignó el valor de "$c" <p>'
     ?>
+    <h2>Ejercicio 3</h2>
+    <p>Muestra el contenido de cada variable inmediatamente después de cada asignación, verificar la evolución del tipo de estas variables</p>
+    <p>$a = “PHP5”;</p>
+    <p>$z[] = &$a;</p>
+    <p>$b = “5a version de PHP”;</p>
+    <p>$c = $b*10;</p>
+    <p>$a .= $b;</p>
+    <p>$b *= $c;</p>
+    <p>$z[0] = “MySQL”;</p>
 
+    <?php
+        unset($a, $b, $c);  
+        $a = "PHP5";
+        echo '$a: ', $a, '<br>';
+
+        $z[] = &$a;
+        print_r($z);
+
+        $b = "5a version de PHP";
+        echo '<br>$b: ', $b, '<br>';
+
+        @$c = $b * 10;
+        echo '$c: ', $c, '<br>';
+
+        $a .= $b;
+        echo '$a: ', $a, '<br>';
+
+        $b =  (int) $b * $c;
+        echo '$b: ', $b, '<br>';
+
+        $z[0] = "MySQL";
+        print_r($z);
+?>
+
+<h2>Ejercicio 4</h2>
+<p>Lee y muestra los valores de las variables del ejercicio anterior, pero ahora con la ayuda de la matriz  $GLOBALS o del modificador global de PHP.</p>
     
+    <?php
+    echo '$GLOBALS["a"]: ', $GLOBALS['a'], '<br>';
+    echo '$GLOBALS["b"]: ', $GLOBALS['b'], '<br>';
+    echo '$GLOBALS["c"]: ', $GLOBALS['c'], '<br>';
+    echo '$GLOBALS["z"]: ', print_r($GLOBALS['z'], true), '<br>';
+    ?>
+
+<h2>Ejercicio 5</h2>
+<p>Dar el valor de las variables $a, $b, $c al final del siguiente script:</p>
+<p>$a = “7 personas”;</p>
+<p>$b = (integer) $a;</p>
+<p>$a = “9E3”; </p>
+<p>$c = (double) $a; </p>
+
+<?php
+        $a = "7 personas";
+        $b = (integer) $a;
+        $a = "9E3";
+        $c = (double) $a;
+        echo '$a: ', $a, '<br>';
+        echo '$b: ', $b, '<br>';
+        echo '$c: ', $c, '<br>'; 
+    ?>
+
+    <h2>Ejercicio 6</h2>
+    <p>Dar y comprobar el valor booleano de las variables $a, $b, $c, $d, $e y $f y muéstralas usando la función</p>
+    <?php
+        unset($a, $b, $c, $z);
+        $a = "0";
+        $b = "TRUE";
+        $c = FALSE;
+        $d = ($a OR $b);
+        $e = ($a AND $c);
+        $f =($a XOR $b);
+        
+        var_dump($a); 
+        var_dump($b); 
+        var_dump($c);
+        var_dump($d);  
+        var_dump($e); 
+        var_dump($f);
+
+        echo "c: ", var_export($c, true);
+        echo "e: ", var_export($e, true);
+?>
+
+    <h2>Ejercicio 7</h2>
+    
+    <?php
+        echo "Versión de Apache y PHP: " . $_SERVER['SERVER_SOFTWARE'] . "<br>";
+        echo "Sistema operativo del servidor: " . php_uname() . "<br>";
+        echo "Idioma del navegador: " . $_SERVER['HTTP_ACCEPT_LANGUAGE'] . "<br>";
+    ?>
+    
+
+
 </body>
 </html>
