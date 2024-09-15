@@ -141,3 +141,15 @@ html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es">
         echo "e: ", var_export($e, true);
 ?>
 
+<h2>Ejercicio 7</h2>
+    
+    <?php
+        echo "Versión de Apache y PHP: " . $_SERVER['SERVER_SOFTWARE'] . "<br>";
+        echo "Sistema operativo del servidor: " . php_uname() . "<br>";
+        echo "Idioma del navegador: " . $_SERVER['HTTP_ACCEPT_LANGUAGE'] . "<br>";
+    ?>
+    
+
+
+</body>
+</html>
