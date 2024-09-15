@@ -91,3 +91,13 @@ html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es">
         $z[0] = "MySQL";
         print_r($z);
 ?>
+
+<h2>Ejercicio 4</h2>
+<p>Lee y muestra los valores de las variables del ejercicio anterior, pero ahora con la ayuda de la matriz  $GLOBALS o del modificador global de PHP.</p>
+    
+    <?php
+    echo '$GLOBALS["a"]: ', $GLOBALS['a'], '<br>';
+    echo '$GLOBALS["b"]: ', $GLOBALS['b'], '<br>';
+    echo '$GLOBALS["c"]: ', $GLOBALS['c'], '<br>';
+    echo '$GLOBALS["z"]: ', print_r($GLOBALS['z'], true), '<br>';
+    ?>
