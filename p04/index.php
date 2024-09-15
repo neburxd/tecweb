@@ -119,3 +119,25 @@ html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es">
         echo '$c: ', $c, '<br>'; 
     ?>
 
+<h2>Ejercicio 6</h2>
+    <p>Dar y comprobar el valor booleano de las variables $a, $b, $c, $d, $e y $f y muéstralas usando la función</p>
+    <?php
+        unset($a, $b, $c, $z);
+        $a = "0";
+        $b = "TRUE";
+        $c = FALSE;
+        $d = ($a OR $b);
+        $e = ($a AND $c);
+        $f =($a XOR $b);
+        
+        var_dump($a); 
+        var_dump($b); 
+        var_dump($c);
+        var_dump($d);  
+        var_dump($e); 
+        var_dump($f);
+
+        echo "c: ", var_export($c, true);
+        echo "e: ", var_export($e, true);
+?>
+
