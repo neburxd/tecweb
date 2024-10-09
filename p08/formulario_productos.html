@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Productos</title>
+    <script>
+        function validarFormulario() {
+            let nombre = document.getElementById("nombre").value;
+            let modelo = document.getElementById("modelo").value;
+            let marca = document.getElementById("marca").value;
+            let precio = document.getElementById("precio").value;
+            let unidades = document.getElementById("unidades").value;
+
+            if (nombre === "" || modelo === "" || marca === "" || precio === "" || unidades === "") {
+                alert("Todos los campos son obligatorios");
+                return false;
+            }
+
+            if (isNaN(precio) || isNaN(unidades)) {
+                alert("El precio y las unidades deben ser números");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <h2>Registro de Nuevo Producto</h2>
+    <form action="set_productov2.php" method="POST" onsubmit="return validarFormulario()">
+        <label for="nombre">Nombre del Producto:</label><br>
+        <input type="text" id="nombre" name="nombre" maxlength="100"><br><br>
+
+        <label for="modelo">Modelo:</label><br>
+        <input type="text" id="modelo" name="modelo" maxlength="50"><br><br>
+
+        <label for="marca">Marca:</label><br>
+        <input type="text" id="marca" name="marca" maxlength="50"><br><br>
+
+        <label for="precio">Precio:</label><br>
+        <input type="text" id="precio" name="precio"><br><br>
+
+        <label for="detalles">Detalles:</label><br>
+        <input type="text" id="detalles" name="detalles"><br><br>
+
+        <label for="unidades">Cantidad:</label><br>
+        <input type="number" id="unidades" name="unidades"><br><br>
+        
+        <input type="submit" value="Registrar Producto">
+    </form>
+</body>
+</html>
